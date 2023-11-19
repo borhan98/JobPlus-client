@@ -4,7 +4,7 @@ import errorImage from "../assets/images/Error404.png";
 
 const ErrorPage = () => {
   return (
-    <div className={"bg-error-pattern bg-cover bg-no-repeat h-[80vh]"}>
+    <div className={"bg-error-pattern bg-cover bg-no-repeat h-[650px]"}>
       <div className="container mx-auto flex items-center justify-center h-full">
         <div className="order-2">
           <h2 className="flex">
