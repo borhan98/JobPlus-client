@@ -8,33 +8,39 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import useAuth from "../Hooks/useAuth";
 
-
 const Register = () => {
-    const [showPass, setShowPass] = useState(true);
-    const {createUser} = useAuth();
+  const [showPass, setShowPass] = useState(true);
+  const { createUser, updateUserProfile } = useAuth();
 
-    // Handle create new user
-    const handleCreateUser = e => {
-        e.preventDefault();
-        const form = e.target;
-        // const name = form.name.value;
-        // const photo = form.photo.value;
-        const email = form.email.value;
-        const password = form.password.value;
+  // Handle create new user
+  const handleCreateUser = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
 
-        // create user
-        createUser(email, password)
-        .then(result => {
-            console.log(result.user.email, "Registration successful!");
-        })
-        .catch(err => {
+    // create user
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user.email, "Registration successful!");
+        // update user profile
+        updateUserProfile(name, photo)
+          .then(() => {
+            console.log("Updated");
+          })
+          .catch((err) => {
             console.log(err.message);
-        })
-    }
+          });
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 
-
-    return (
-        <div className="container mx-auto flex items-center py-10">
+  return (
+    <div className="container mx-auto flex items-center py-10">
       <figure className="flex-1">
         <img src={LoginImage} alt="Login Image" draggable={false} />
       </figure>
@@ -108,7 +114,10 @@ const Register = () => {
             </small>
           </div>
           <div>
-            <button type="submit" className="bg-[#FF5200] py-2 px-3 w-full rounded-md text-white font-bold tracking-wider border border-[#FF5200] duration-300 hover:bg-transparent hover:text-zinc-600">
+            <button
+              type="submit"
+              className="bg-[#FF5200] py-2 px-3 w-full rounded-md text-white font-bold tracking-wider border border-[#FF5200] duration-300 hover:bg-transparent hover:text-zinc-600"
+            >
               Register
             </button>
           </div>
@@ -124,7 +133,7 @@ const Register = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default Register;
