@@ -5,9 +5,29 @@ import { IoMdMail } from "react-icons/io";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import useAuth from "../Hooks/useAuth";
 
 const Login = () => {
   const [showPass, setShowPass] = useState(true);
+  const { login } = useAuth();
+
+  // Handle Login user
+  const handleLogin = e => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    
+    // Login
+    login(email, password)
+    .then((result) => {
+        console.log(result.user.email, "Logged In successfully!");
+    })
+    .catch(err => {
+        console.log(err.message);
+    })
+  }
+
   return (
     <div className="container mx-auto flex items-center py-10">
       <figure className="flex-1">
@@ -24,12 +44,14 @@ const Login = () => {
           <h3 className="text-3xl font-semibold">Welcome Back!</h3>
           <p className="text-zinc-600">Login to continue</p>
         </div>
-        <form className="space-y-3">
+        <form onSubmit={handleLogin} className="space-y-3">
           <div className="relative">
             <input
               type="text"
+              name="email"
               placeholder="Enter your email"
               className="border-b border-l pl-10 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+              required
             />
             <span className="absolute top-5 left-3 text-zinc-600">
               <IoMdMail />
@@ -38,8 +60,10 @@ const Login = () => {
           <div className="relative">
             <input
               type={!showPass ? "text" : "password"}
+              name="password"
               placeholder="Enter your password"
               className="border-b border-l pl-10 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+              required
             />
             <span className="absolute top-5 left-3 text-zinc-600">
               <FaLock />
@@ -55,7 +79,7 @@ const Login = () => {
             </small>
           </div>
           <div>
-            <button className="bg-[#FF5200] py-2 px-3 w-full rounded-md text-white font-bold tracking-wider border border-[#FF5200] duration-300 hover:bg-transparent hover:text-zinc-600">
+            <button type="submit" className="bg-[#FF5200] py-2 px-3 w-full rounded-md text-white font-bold tracking-wider border border-[#FF5200] duration-300 hover:bg-transparent hover:text-zinc-600">
               Login
             </button>
           </div>
