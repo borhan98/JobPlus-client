@@ -2,20 +2,67 @@ import useAuth from "../Hooks/useAuth";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import useAxios from "../Hooks/useAxios";
 
 const AddJob = () => {
   const [startDate, setStartDate] = useState(new Date());
   const { user } = useAuth();
+  const axios = useAxios();
+
+  const handleAddJob = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const job_author = form.name.value;
+    const author_email = user?.email;
+    const job_title = form.title.value;
+    const job_category = form.category.value;
+    const salary_range = form.salary.value;
+    const posting_date = form.postingDate.value;
+    const total_applied = form.applied.value;
+    const company_logo = form.conpany_logo.value;
+    const locate = form.location.value;
+    const location = { city: locate };
+    const image = form.photo.value;
+    const job_description = form.description.value;
+    const responsibilities = [form.responsibilities.value];
+    const deadline = startDate.toLocaleDateString();
+
+    const newJob = {
+      job_author,
+      author_email,
+      job_title,
+      job_description,
+      job_category,
+      salary_range,
+      posting_date,
+      total_applied,
+      company_logo,
+      location,
+      deadline,
+      responsibilities,
+      image,
+    };
+    
+    // POST to database
+    axios.post("/jobs", newJob)
+    .then(data => {
+        console.log(data.data);
+    })
+    .catch(err => {
+        console.log(err);
+    })
+
+  };
 
   return (
     <div className="bg-base-200">
       <div className="container mx-auto">
-        <div className="text-center max-w-xl mx-auto mb-14 pt-10">
-          <h3 className="text-2xl font-medium text-zinc-600 mb-4">
+        <div className="text-center max-w-sm mx-auto mb-14 pt-10">
+          <h3 className="text-2xl font-medium text-zinc-600 mb-4 border-b">
             Post a new Job
           </h3>
         </div>
-        <form className="space-y-10">
+        <form onSubmit={handleAddJob} className="space-y-10">
           {/* Row 1 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-1">
@@ -74,43 +121,43 @@ const AddJob = () => {
           {/* Row 3 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="email">Salary range</label>
+              <label htmlFor="salary">Salary range</label>
               <input
                 type="text"
                 name="salary"
                 placeholder="Enter salary range"
                 className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
                 required
-                id="email"
+                id="salary"
               />
             </div>
             <div>
-              <label htmlFor="email">Posting date</label>
+              <label htmlFor="posting_date">Posting date</label>
               <input
                 type="text"
                 name="postingDate"
                 defaultValue={new Date().toLocaleDateString()}
                 className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
                 required
-                id="email"
+                id="posting_date"
               />
             </div>
           </div>
           {/* Row 4 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="email">Applicant&#39;s number</label>
+              <label htmlFor="applied">Applicant&#39;s number</label>
               <input
                 type="text"
                 name="applied"
                 defaultValue={0}
                 className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
                 required
-                id="email"
+                id="applied"
               />
             </div>
             <div className="flex flex-col">
-            <label htmlFor="email">Application deadline</label>
+              <label htmlFor="email">Application deadline</label>
               <DatePicker
                 className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
                 selected={startDate}
@@ -145,7 +192,7 @@ const AddJob = () => {
               <input
                 type="text"
                 name="location"
-                placeholder="Enter company location"
+                placeholder="City name"
                 className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
                 required
                 id="location"
@@ -153,14 +200,14 @@ const AddJob = () => {
             </div>
           </div>
           <div>
-            <label htmlFor="email">Photo URL</label>
+            <label htmlFor="photo">Photo URL</label>
             <input
               type="text"
               name="photo"
               placeholder="Enter job banner photo URL"
               className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
               required
-              id="email"
+              id="photo"
             />
           </div>
           <div>
@@ -175,17 +222,20 @@ const AddJob = () => {
             ></textarea>
           </div>
           <div>
-            <label htmlFor="description">Responsibilities</label>
+            <label htmlFor="responsibilities">Responsibilities</label>
             <textarea
               name="responsibilities"
               placeholder="Enter job responsibilities"
-              className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full bg-base-200"
-              id="description"
+              className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+              id="responsibilities"
               cols="30"
               rows="5"
             ></textarea>
           </div>
-          <button className="bg-[#FF5200] py-2 px-3 w-full rounded-md text-white font-bold tracking-wider border border-[#FF5200] duration-300 hover:bg-transparent hover:text-zinc-600">
+          <button
+            type="submit"
+            className="bg-[#FF5200] py-2 px-3 w-full rounded-md text-white font-bold tracking-wider border border-[#FF5200] duration-300 hover:bg-transparent hover:text-zinc-600"
+          >
             Add Now
           </button>
         </form>
