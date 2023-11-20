@@ -1,6 +1,4 @@
 import { useLoaderData } from "react-router-dom";
-// import JobBanner from "../assets/images/Network-Administator.jpg";
-// import companyLogo from "../assets/images/logo2.png";
 import { CiLocationOn } from "react-icons/ci";
 import { RiHandbagFill, RiMoneyDollarCircleFill } from "react-icons/ri";
 import { FaUsers } from "react-icons/fa";

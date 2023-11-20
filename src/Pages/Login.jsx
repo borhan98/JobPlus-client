@@ -3,30 +3,34 @@ import { FcGoogle } from "react-icons/fc";
 import { FaLock } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import useAuth from "../Hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [showPass, setShowPass] = useState(true);
   const { login } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   // Handle Login user
-  const handleLogin = e => {
+  const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    
+
     // Login
     login(email, password)
-    .then((result) => {
-        console.log(result.user.email, "Logged In successfully!");
-    })
-    .catch(err => {
+      .then(() => {
+        toast.success("Logged In successfully!");
+        navigate(location.state || "/");
+      })
+      .catch((err) => {
         console.log(err.message);
-    })
-  }
+      });
+  };
 
   return (
     <div className="container mx-auto flex items-center py-10">
@@ -79,7 +83,10 @@ const Login = () => {
             </small>
           </div>
           <div>
-            <button type="submit" className="bg-[#FF5200] py-2 px-3 w-full rounded-md text-white font-bold tracking-wider border border-[#FF5200] duration-300 hover:bg-transparent hover:text-zinc-600">
+            <button
+              type="submit"
+              className="bg-[#FF5200] py-2 px-3 w-full rounded-md text-white font-bold tracking-wider border border-[#FF5200] duration-300 hover:bg-transparent hover:text-zinc-600"
+            >
               Login
             </button>
           </div>

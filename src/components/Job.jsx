@@ -8,9 +8,12 @@ import {
 } from "react-icons/fa";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import useAuth from "../Hooks/useAuth";
 
 const Job = ({ job }) => {
   const [love, setLove] = useState(false);
+  const { user } = useAuth();
   const {
     _id,
     job_author,
@@ -22,6 +25,18 @@ const Job = ({ job }) => {
     posting_date,
     deadline,
   } = job;
+
+  // Handle toast message if user try to veiw details about a job when he/she not logged in
+  const handleMessageToLogin = () => {
+    if (!user) {
+      toast.error("You have to login first to view details", {
+        style: {
+          background: "#333",
+          color: "#fff",
+        },
+      });
+    }
+  };
 
   return (
     <div className="grid gap-2 grid-cols-12 p-4 bg-base-100 items-center border-b border-l border-r mb-8 rounded-md">
@@ -72,7 +87,10 @@ const Job = ({ job }) => {
             {love ? <FaRegHeart /> : <FaHeart />}
           </span>
           <Link to={`/jobdetails/${_id}`} className="w-full">
-            <button className="bg-[#FF5200] py-2 px-3 w-full rounded-md text-white font-bold tracking-wider border border-[#FF5200] duration-300 hover:bg-transparent hover:text-zinc-600">
+            <button
+              onClick={handleMessageToLogin}
+              className="bg-[#FF5200] py-2 px-3 w-full rounded-md text-white font-bold tracking-wider border border-[#FF5200] duration-300 hover:bg-transparent hover:text-zinc-600"
+            >
               View Details
             </button>
           </Link>

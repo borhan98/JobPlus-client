@@ -10,7 +10,7 @@ import useAuth from "../Hooks/useAuth";
 
 const Register = () => {
   const [showPass, setShowPass] = useState(true);
-  const { createUser, updateUserProfile } = useAuth();
+  const { createUser, updateUserProfile, logout } = useAuth();
   const navigate = useNavigate();
 
   // Handle create new user
@@ -30,7 +30,15 @@ const Register = () => {
         updateUserProfile(name, photo)
           .then(() => {
             console.log("Updated");
-            navigate("/");
+            //Log out user
+            logout()
+              .then(() => {
+                console.log("Logged Out");
+              })
+              .catch((err) => {
+                console.log(err.message);
+              });
+            navigate("/login");
           })
           .catch((err) => {
             console.log(err.message);

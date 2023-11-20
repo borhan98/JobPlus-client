@@ -3,6 +3,7 @@ import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
   const { user } = useAuth();
+
   const activeRoute = ({ isActive }) =>
     isActive
       ? "bg-[#FF5200] py-2 px-3 rounded-md text-white"
