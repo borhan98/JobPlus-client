@@ -45,7 +45,7 @@ const Job = ({ job }) => {
         <h3 className="text-xl font-medium">{job_author}</h3>
       </div>
       <div className="col-span-7 border-r space-y-4">
-        <h3 className="text-2xl font-semibold">{job_title}</h3>
+        <h3 className="text-2xl font-semibold capitalize">{job_title}</h3>
         <div className="flex gap-5">
           <p className="flex items-center text-zinc-600">
             <span className="text-[#FF5200] text-xl mr-1">
