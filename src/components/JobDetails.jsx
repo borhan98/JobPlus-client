@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
-import JobBanner from "../assets/images/Network-Administator.jpg";
-import companyLogo from "../assets/images/logo2.png";
+// import JobBanner from "../assets/images/Network-Administator.jpg";
+// import companyLogo from "../assets/images/logo2.png";
 import { CiLocationOn } from "react-icons/ci";
 import { RiHandbagFill, RiMoneyDollarCircleFill } from "react-icons/ri";
 import { FaUsers } from "react-icons/fa";
@@ -9,6 +9,7 @@ import { MdLocationPin } from "react-icons/md";
 const JobDetails = () => {
   const {
     image,
+    company_logo,
     job_title,
     job_category,
     job_description,
@@ -25,7 +26,7 @@ const JobDetails = () => {
       <div className="relative">
         <img
           className="h-[450px] w-full object-cover"
-          src={JobBanner}
+          src={image}
           alt="Banner image"
         />
         <div className="absolute w-full h-full bg-[rgba(0,0,0,0.25)] top-0 left-0"></div>
@@ -33,7 +34,7 @@ const JobDetails = () => {
           <figure className="">
             <img
               className="w-28 h-28 p-4 bg-[#FFF] rounded-md"
-              src={companyLogo}
+              src={company_logo}
               alt="Company Logo"
             />
           </figure>

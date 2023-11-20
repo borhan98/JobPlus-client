@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
+import Profile from "./Profile";
 
 const MainLayout = ({ children }) => {
   return (
@@ -43,9 +44,7 @@ const MainLayout = ({ children }) => {
                 <Navbar />
               </div>
             </div>
-            <div>
-              <button className="btn">Profile</button>
-            </div>
+            <Profile />
           </div>
         </div>
         {/* Page content here */}
