@@ -3,16 +3,17 @@ import { CiLocationOn } from "react-icons/ci";
 import { RiHandbagFill, RiMoneyDollarCircleFill } from "react-icons/ri";
 import { FaUsers } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
+import defaultCompanyLogo from "../assets/images/logo2.png";
 
 const JobDetails = () => {
   const {
     image,
-    company_logo,
     job_title,
+    company_logo,
     job_category,
     job_description,
-    responsibilities,
     deadline,
+    responsibilities,
     salary_range,
     total_applied,
     location,
@@ -32,14 +33,15 @@ const JobDetails = () => {
           <figure className="">
             <img
               className="w-28 h-28 p-4 bg-[#FFF] rounded-md"
-              src={company_logo}
+              src={company_logo ? company_logo : defaultCompanyLogo}
               alt="Company Logo"
             />
           </figure>
           <div className="text-white pr-4">
             <h3 className="text-2xl font-bold mb-2">{job_title}</h3>
             <span className="flex items-center gap-2 text-zinc-400">
-              <CiLocationOn className="text-xl" /> {location.city}, {location.country}
+              <CiLocationOn className="text-xl" />
+              {location ? location.city : ""},{location ? location.country : ""}
             </span>
           </div>
         </div>
@@ -47,9 +49,7 @@ const JobDetails = () => {
       {/* Job Details */}
       <div className="mt-6">
         <h3 className="text-2xl font-medium text-zinc-600 mb-4">Description</h3>
-        <p className="text-zinc-600">
-          {job_description}
-        </p>
+        <p className="text-zinc-600">{job_description}</p>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-6">
           <div className="py-20 bg-base-200 rounded-md flex flex-col items-center justify-center">
             <div className="text-lg font-medium flex flex-col gap-2">
@@ -64,7 +64,10 @@ const JobDetails = () => {
               <span className="text-xl">
                 <MdLocationPin />
               </span>
-              <span>{location.city}, {location.country}</span>
+              <span>
+                {location ? location.city : ""},
+                {location ? location.country : ""}
+              </span>
             </div>
           </div>
           <div className="py-20 bg-base-200 rounded-md flex flex-col items-center justify-center">
@@ -88,9 +91,11 @@ const JobDetails = () => {
           Responsibilities
         </h3>
         <ul className="text-zinc-600 mb-4">
-            {
-                responsibilities.map((res, index) => <li key={index}>- {res}</li>)
-            }
+          {responsibilities ? (
+            responsibilities.map((res, index) => <li key={index}>- {res}</li>)
+          ) : (
+            <li>-Author didn&#39;t add any responsibilities</li>
+          )}
         </ul>
         <div className="flex gap-4 items-center">
           <div className="text-zinc-600">

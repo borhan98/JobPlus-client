@@ -1,0 +1,197 @@
+import useAuth from "../Hooks/useAuth";
+import { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+const AddJob = () => {
+  const [startDate, setStartDate] = useState(new Date());
+  const { user } = useAuth();
+
+  return (
+    <div className="bg-base-200">
+      <div className="container mx-auto">
+        <div className="text-center max-w-xl mx-auto mb-14 pt-10">
+          <h3 className="text-2xl font-medium text-zinc-600 mb-4">
+            Post a new Job
+          </h3>
+        </div>
+        <form className="space-y-10">
+          {/* Row 1 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-1">
+              <label htmlFor="email">Your Name</label>
+              <input
+                type="text"
+                name="name"
+                defaultValue={user?.displayName}
+                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full bg-base-100"
+                required
+                id="email"
+                disabled
+              />
+            </div>
+            <div className="space-y-1">
+              <label htmlFor="email">Your Email</label>
+              <input
+                type="email"
+                name="email"
+                defaultValue={user?.email}
+                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full bg-base-100"
+                required
+                id="email"
+                disabled
+              />
+            </div>
+          </div>
+          {/* Row 2 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-1">
+              <label htmlFor="email">Job title</label>
+              <input
+                type="text"
+                name="title"
+                placeholder="Enter job title"
+                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                required
+                id="email"
+              />
+            </div>
+            <div className="space-y-1">
+              <label htmlFor="email">Job category</label>
+              <select
+                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                id="email"
+                name="category"
+              >
+                <option value="">Select One</option>
+                <option value="on-site">On-site</option>
+                <option value="remote">Remote</option>
+                <option value="hybrid">Hybrid</option>
+                <option value="part-time">Part Time</option>
+              </select>
+            </div>
+          </div>
+          {/* Row 3 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="email">Salary range</label>
+              <input
+                type="text"
+                name="salary"
+                placeholder="Enter salary range"
+                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                required
+                id="email"
+              />
+            </div>
+            <div>
+              <label htmlFor="email">Posting date</label>
+              <input
+                type="text"
+                name="postingDate"
+                defaultValue={new Date().toLocaleDateString()}
+                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                required
+                id="email"
+              />
+            </div>
+          </div>
+          {/* Row 4 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="email">Applicant&#39;s number</label>
+              <input
+                type="text"
+                name="applied"
+                defaultValue={0}
+                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                required
+                id="email"
+              />
+            </div>
+            <div className="flex flex-col">
+            <label htmlFor="email">Application deadline</label>
+              <DatePicker
+                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+              />
+
+              {/* <label htmlFor="email">Application deadline</label>
+              <input
+                type="date"
+                name="deadline"
+                placeholder="Enter your email"
+                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                required
+                id="email"
+              /> */}
+            </div>
+          </div>
+          {/* Row 5 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="company_logo">Company logo URL</label>
+              <input
+                type="text"
+                name="conpany_logo"
+                placeholder="Enter company logo URL"
+                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                id="company_logo"
+              />
+            </div>
+            <div>
+              <label htmlFor="location">Company location</label>
+              <input
+                type="text"
+                name="location"
+                placeholder="Enter company location"
+                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                required
+                id="location"
+              />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="email">Photo URL</label>
+            <input
+              type="text"
+              name="photo"
+              placeholder="Enter job banner photo URL"
+              className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+              required
+              id="email"
+            />
+          </div>
+          <div>
+            <label htmlFor="description">Job description</label>
+            <textarea
+              name="description"
+              placeholder="Enter job description"
+              className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+              id="description"
+              cols="30"
+              rows="5"
+            ></textarea>
+          </div>
+          <div>
+            <label htmlFor="description">Responsibilities</label>
+            <textarea
+              name="responsibilities"
+              placeholder="Enter job responsibilities"
+              className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full bg-base-200"
+              id="description"
+              cols="30"
+              rows="5"
+            ></textarea>
+          </div>
+          <button className="bg-[#FF5200] py-2 px-3 w-full rounded-md text-white font-bold tracking-wider border border-[#FF5200] duration-300 hover:bg-transparent hover:text-zinc-600">
+            Add Now
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default AddJob;
