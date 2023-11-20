@@ -19,6 +19,9 @@ const Sidebar = () => {
       <NavLink className={activeRoute} to={"/addjob"}>
         Add a Job
       </NavLink>
+      <NavLink className={activeRoute} to={"/myjobs"}>
+        My Jobs
+      </NavLink>
       <NavLink className={activeRoute} to={"/blogs"}>
         Blogs
       </NavLink>

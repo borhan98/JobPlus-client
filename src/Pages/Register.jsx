@@ -4,13 +4,14 @@ import { FaUser, FaLock } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { MdAddPhotoAlternate } from "react-icons/md";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import useAuth from "../Hooks/useAuth";
 
 const Register = () => {
   const [showPass, setShowPass] = useState(true);
   const { createUser, updateUserProfile } = useAuth();
+  const navigate = useNavigate();
 
   // Handle create new user
   const handleCreateUser = (e) => {
@@ -29,6 +30,7 @@ const Register = () => {
         updateUserProfile(name, photo)
           .then(() => {
             console.log("Updated");
+            navigate("/");
           })
           .catch((err) => {
             console.log(err.message);
