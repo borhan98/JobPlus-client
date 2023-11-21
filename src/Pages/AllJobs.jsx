@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import useAxios from "../Hooks/useAxios";
 import { FaSearch } from "react-icons/fa";
 import Job from "../components/Job";
+import dataNotFoundImage from "../assets/images/no-data.png";
 
 const AllJobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -58,7 +59,12 @@ const AllJobs = () => {
         Total job: {searchJob.length ? searchJob.length : jobs.length}
       </h3>
       {searchJob.length === 0
-        ? <p className="first-letter:text-2xl">Sorry, we couldn&#39;t find any matching results for your search. Please try again with different keywords.</p>
+        ? <>
+        <p className="first-letter:text-2xl">Sorry, we couldn&#39;t find any matching results for your search. Please try again with different keywords.</p>
+        <figure className="flex justify-center">
+          <img src={dataNotFoundImage} alt="" />
+        </figure>
+        </>
         : searchJob.length === 0
         ? jobs.map((job) => <Job key={job._id} job={job} />)
         : searchJob.map((job) => <Job key={job._id} job={job} />)}

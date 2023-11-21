@@ -3,6 +3,7 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import useAxios from "../Hooks/useAxios";
+import Swal from "sweetalert2";
 
 const AddJob = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -46,7 +47,14 @@ const AddJob = () => {
     // POST to database
     axios.post("/jobs", newJob)
     .then(data => {
-        console.log(data.data);
+        if (data.data.insertedId) {
+          Swal.fire({
+            icon: "success",
+            title: "successfully posted the job",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
     })
     .catch(err => {
         console.log(err);
