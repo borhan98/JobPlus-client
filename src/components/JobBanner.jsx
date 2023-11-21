@@ -25,7 +25,7 @@ const JobBanner = ({ bannerInfo }) => {
           <h3 className="text-2xl font-bold mb-2">{job_title}</h3>
           <span className="flex items-center gap-2 text-zinc-400">
             <CiLocationOn className="text-xl" />
-            {location ? location.city : ""}
+            {location ? location.city : ""} {" "}
             {location ? location.country : ""}
           </span>
         </div>

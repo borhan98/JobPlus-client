@@ -1,10 +1,44 @@
 import { IoClose } from "react-icons/io5";
 import useAuth from "../Hooks/useAuth";
+import useAxios from "../Hooks/useAxios";
+import toast from "react-hot-toast";
+import PropTypes from "prop-types";
 
-const ApplyModal = () => {
+const ApplyModal = ({ jobId, applied, setApplied }) => {
+  const axios = useAxios();
   const { user } = useAuth();
+
+  const handleSubmitApplication = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const resume = form.resume.value;
+    const application = { jobId, name, email, resume };
+    const applicant = {increaseApplicant: 1}
+
+    // application POST API
+    axios.post("/applications", application).then((data) => {
+      if (data.data.insertedId) {
+        form.reset();
+        toast.success("Application Successfull", {
+          style: {
+            background: "#333",
+            color: "#fff",
+          },
+        });
+      }
+    });
+
+    // handle applicant number
+    axios.put(`/jobs/${jobId}`, applicant).then((data) => {
+        if (data.data.modifiedCount) {
+            setApplied(++applied)
+        }
+    });
+  };
+
   return (
-    // You can open the modal using document.getElementById('ID').showModal() method
     <dialog id="my_modal_1" className="modal">
       <div className="modal-box w-11/12 md:w-10/12 lg:w-[650px] bg-base-200">
         <div className="text-center mx-auto mt-6 mb-8">
@@ -12,7 +46,7 @@ const ApplyModal = () => {
             Apply Your Dream Job
           </h3>
         </div>
-        <form className="space-y-6">
+        <form onSubmit={handleSubmitApplication} className="space-y-6">
           {/* Name and Email Field */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-1">
@@ -40,14 +74,14 @@ const ApplyModal = () => {
           </div>
           {/* Resume link field */}
           <div className="space-y-1">
-            <label htmlFor="name">Your resume</label>
+            <label htmlFor="resume">Your resume</label>
             <input
               type="text"
-              name="name"
+              name="resume"
               placeholder="Enter resume link"
               className="border px-2 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
               required
-              id="name"
+              id="resume"
             />
           </div>
           <button
@@ -71,3 +105,8 @@ const ApplyModal = () => {
 };
 
 export default ApplyModal;
+ApplyModal.propTypes = {
+  jobId: PropTypes.string.isRequired,
+  applied: PropTypes.number.isRequired,
+  setApplied: PropTypes.func.isRequired,
+};

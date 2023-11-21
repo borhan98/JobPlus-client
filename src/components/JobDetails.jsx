@@ -6,10 +6,16 @@ import ApplyModal from "./ApplyModal";
 import JobBanner from "./JobBanner";
 import useAuth from "../Hooks/useAuth";
 import Swal from "sweetalert2";
+import { useEffect, useState } from "react";
+import useAxios from "../Hooks/useAxios";
 
 const JobDetails = () => {
+  const [applied, setApplied] = useState(0);
+  const [canApply, setCanApply] = useState({});
+  const axios = useAxios();
   const { user } = useAuth();
   const {
+    _id,
     image,
     job_title,
     author_email,
@@ -22,6 +28,8 @@ const JobDetails = () => {
     total_applied,
     location,
   } = useLoaderData();
+  const { email } = canApply;
+  // console.log(email, jobId);
   const bannerInfo = { image, job_title, company_logo, location };
 
   // Handle apply job application
@@ -32,17 +40,27 @@ const JobDetails = () => {
     if (user?.email === author_email) {
       return Swal.fire({
         icon: "warning",
-        text: "You can't apply your own job"
+        text: "You can't apply your own job",
       });
     } else if (currentDate > jobDeadline) {
       return Swal.fire({
         icon: "info",
         title: "Opps, sorry...",
-        text: "You can't apply, deadline is over"
+        text: "You can't apply, deadline is over",
+      });
+    } else if (user?.email === email) {
+      return Swal.fire({
+        text: "You have already applied for the job",
       });
     }
     document.getElementById("my_modal_1").showModal();
   };
+
+  useEffect(() => {
+    axios.get(`/applications/${_id}`).then((data) => {
+      setCanApply(data.data);
+    });
+  }, [axios, _id]);
 
   return (
     <div className="container mx-auto">
@@ -67,7 +85,7 @@ const JobDetails = () => {
                 <MdLocationPin />
               </span>
               <span>
-                {location ? location.city : ""}
+                {location ? location.city : ""}{" "}
                 {location ? location.country : ""}
               </span>
             </div>
@@ -85,7 +103,7 @@ const JobDetails = () => {
               <span>
                 <FaUsers />
               </span>
-              <span>Applied: {total_applied}</span>
+              <span>Applied: {applied ? applied : total_applied}</span>
             </div>
           </div>
         </div>
@@ -111,7 +129,7 @@ const JobDetails = () => {
           >
             Apply Now
           </button>
-          <ApplyModal />
+          <ApplyModal jobId={_id} applied={applied} setApplied={setApplied} />
         </div>
       </div>
     </div>
