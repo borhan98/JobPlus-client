@@ -8,27 +8,14 @@ const AllJobs = () => {
   const [jobs, setJobs] = useState([]);
   const [searchJob, setSearchJob] = useState("");
   const [searchValue, setSearchValue] = useState("");
-  const axios = useAxios();
-
-  
-  const plit = "2023-11-15";
-  const date = plit.split("-").join("/");
-  const currentDate = new Date().toLocaleDateString();
-  //   console.log(currentDate);
-  const date1 = new Date(date);
-  const date2 = new Date(currentDate);
-  //   if (date1 > date2) {
-  //     console.log("date1 boro");
-  //   } else {
-  //     console.log("date2 boro");
-  //   }
+  const axios = useAxios();  
 
   useEffect(() => {
     axios.get("/jobs").then((data) => setJobs(data.data));
   }, [axios]);
 
   useEffect(() => {
-    const wantedJob = jobs.filter((job) => job.job_title.includes(searchValue));
+    const wantedJob = jobs.filter((job) => job.job_title.toLowerCase().includes(searchValue.toLowerCase()));
     setSearchJob(wantedJob);
   }, [searchValue, jobs]);
 

@@ -7,6 +7,7 @@ import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import useAuth from "../Hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [showPass, setShowPass] = useState(true);
@@ -24,16 +25,25 @@ const Register = () => {
 
     // create user
     createUser(email, password)
-      .then((result) => {
-        console.log(result.user.email, "Registration successful!");
+      .then(() => {
+        toast.success("Successfully Registered", {
+          style: {
+            background: "#333",
+            color: "#fff",
+          },
+        });
         // update user profile
         updateUserProfile(name, photo)
           .then(() => {
-            console.log("Updated");
             //Log out user
             logout()
               .then(() => {
-                console.log("Logged Out");
+                toast("Please Login", {
+                  style: {
+                    background: "#333",
+                    color: "#fff",
+                  },
+                });
               })
               .catch((err) => {
                 console.log(err.message);
@@ -52,8 +62,13 @@ const Register = () => {
   // Handle google login
   const handleGoogleLogin = () => {
     googleLogin()
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        toast.success("Logged In successfully!", {
+          style: {
+            background: "#333",
+            color: "#fff",
+          },
+        });
         navigate("/")
       })
       .catch((err) => console.log(err));

@@ -24,7 +24,12 @@ const Login = () => {
     // Login
     login(email, password)
       .then(() => {
-        toast.success("Logged In successfully!");
+        toast.success("Logged In successfully!", {
+          style: {
+            background: "#333",
+            color: "#fff",
+          },
+        });
         navigate(location.state || "/");
       })
       .catch((err) => {
@@ -35,8 +40,13 @@ const Login = () => {
   // Handle google login
   const handleGoogleLogin = () => {
     googleLogin()
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        toast.success("Logged In successfully!", {
+          style: {
+            background: "#333",
+            color: "#fff",
+          },
+        });
         navigate(location.state || "/");
       })
       .catch((err) => console.log(err));

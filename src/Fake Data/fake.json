@@ -1,74 +1,5 @@
 [
     {
-      "image": "https://i.ibb.co/FgqPpkB/Network-Administrator-2.jpg",
-      "company_logo": "https://i.ibb.co/9VRj6cN/logo2.png",
-      "job_category": "remote",
-      "job_title": "Network Administrator",
-      "job_description": "Exciting opportunity for a Network Administrator to join our IT team. Responsible for maintaining and configuring network infrastructure. Troubleshoot network issues, implement security measures, and collaborate with cross-functional teams for optimal network performance.",
-      "responsibilities": [
-        "Maintain and configure network infrastructure.",
-        "Troubleshoot network issues and provide solutions.",
-        "Implement security measures to protect the network.",
-        "Collaborate with cross-functional teams for optimal network performance.",
-        "Stay updated on network technology trends."
-      ],
-      "posting_date": "2023-02-01",
-      "deadline": "2023-03-01",
-      "job_author": "Michael Turner",
-      "salary_range": "$65,000 - $85,000",
-      "total_applied": 0,
-      "location": {
-          "city": "Seoul",
-          "country": "South Korea"
-      }
-    },
-    {
-      "image": "https://i.ibb.co/k2b6MRF/Marketing-Specialist.jpg",
-      "company_logo": "https://i.ibb.co/3dRSQWR/logo6.png",
-      "job_category": "remote",
-      "job_title": "Marketing Specialist",
-      "job_description": "Join our marketing team as a Marketing Specialist. Develop and execute marketing campaigns, analyze performance metrics, and contribute to overall brand strategy. Collaborate with designers and writers to create compelling marketing materials.",
-      "responsibilities": [
-        "Develop and execute marketing campaigns.",
-        "Analyze performance metrics and adjust strategies accordingly.",
-        "Contribute to overall brand strategy.",
-        "Collaborate with designers and writers to create compelling marketing materials.",
-        "Stay updated on marketing trends and industry best practices."
-      ],
-      "posting_date": "2023-02-05",
-      "deadline": "2023-03-05",
-      "job_author": "Sophie Mitchell",
-      "salary_range": "$55,000 - $75,000",
-      "total_applied": 0,
-      "location": {
-          "city": "Singapore",
-          "country": "Singapore"
-      }
-    },
-    {
-      "image": "https://i.ibb.co/XCVWsdh/Financial-Analyst.jpg",
-      "company_logo": "https://i.ibb.co/4gF6YHs/logo7.png",
-      "job_category": "hybrid",
-      "job_title": "Financial Analyst",
-      "job_description": "Exciting opportunity for a Financial Analyst to join our finance team. Analyze financial data, create reports, and provide insights for strategic decision-making. Collaborate with departments to ensure financial goals are met.",
-      "responsibilities": [
-        "Analyze financial data to provide insights.",
-        "Create reports for strategic decision-making.",
-        "Collaborate with departments to ensure financial goals are met.",
-        "Conduct financial forecasting and budgeting.",
-        "Stay updated on financial industry trends."
-      ],
-      "posting_date": "2023-02-10",
-      "deadline": "2023-03-10",
-      "job_author": "David Lewis",
-      "salary_range": "$70,000 - $90,000",
-      "total_applied": 0,
-      "location": {
-          "city": "Berlin",
-          "country": "Germany"
-      }
-    },
-    {
       "image": "https://i.ibb.co/LdzqCvv/Customer-Support-2.jpg",
       "company_logo": "https://i.ibb.co/BGK6nZy/logo5.png",
       "job_category": "part-time",
@@ -81,14 +12,39 @@
         "Collaborate with the support team to improve customer satisfaction.",
         "Stay updated on product knowledge and features."
       ],
-      "posting_date": "2023-02-15",
-      "deadline": "2023-03-15",
-      "job_author": "Daniel Turner",
-      "salary_range": "$20,000 - $25,000 (Pro-rated)",
+      "posting_date": "11/21/2023",
+      "deadline": "12/10/2023",
+      "job_author": "John Doe",
+      "author_email": "john.doe@gmail.com",
+      "salary_range": "$20,000 - $25,000",
       "total_applied": 0,
       "location": {
           "city": "Cape Town",
           "country": "South Africa"
+      }
+    },
+    {
+      "image": "https://i.ibb.co/FgqPpkB/Network-Administrator-2.jpg",
+      "company_logo": "https://i.ibb.co/9VRj6cN/logo2.png",
+      "job_category": "remote",
+      "job_title": "Network Administrator",
+      "job_description": "Exciting opportunity for a Network Administrator to join our IT team. Responsible for maintaining and configuring network infrastructure. Troubleshoot network issues, implement security measures, and collaborate with cross-functional teams for optimal network performance.",
+      "responsibilities": [
+        "Maintain and configure network infrastructure.",
+        "Troubleshoot network issues and provide solutions.",
+        "Implement security measures to protect the network.",
+        "Collaborate with cross-functional teams for optimal network performance.",
+        "Stay updated on network technology trends."
+      ],
+      "posting_date": "11/21/2023",
+      "deadline": "12/21/2023",
+      "job_author": "Borhan Uddin",
+      "author_email": "borhanuddindns420@gmail.com",
+      "salary_range": "$65,000 - $85,000",
+      "total_applied": 0,
+      "location": {
+          "city": "Seoul",
+          "country": "South Korea"
       }
     },
     {
@@ -104,9 +60,10 @@
         "Ensure projects comply with safety and environmental regulations.",
         "Stay updated on civil engineering trends and technologies."
       ],
-      "posting_date": "2023-02-20",
-      "deadline": "2023-03-20",
-      "job_author": "Olivia Roberts",
+      "posting_date": "11/21/2023",
+      "deadline": "12/12/2023",
+      "job_author": "John Doe",
+      "author_email": "john.doe@gmail.com",
       "salary_range": "$75,000 - $95,000",
       "total_applied": 0,
       "location": {
@@ -115,49 +72,27 @@
       }
     },
     {
-      "image": "https://i.ibb.co/F86FKmY/Graphic-Designer.jpg",
-      "company_logo": "https://i.ibb.co/dcFc75x/logo3.png",
-      "job_category": "remote",
-      "job_title": "Graphic Designer",
-      "job_description": "Exciting opportunity for a Graphic Designer to join our creative team. Create visually stunning designs for various platforms, collaborate with marketing teams, and bring creative concepts to life.",
-      "responsibilities": [
-        "Create visually stunning designs for various platforms.",
-        "Collaborate with marketing teams to understand design requirements.",
-        "Bring creative concepts to life through design.",
-        "Iterate on designs based on feedback from stakeholders.",
-        "Stay updated on design trends and software tools."
-      ],
-      "posting_date": "2023-02-25",
-      "deadline": "2023-03-25",
-      "job_author": "Henry Clark",
-      "salary_range": "$50,000 - $70,000",
-      "total_applied": 0,
-      "location": {
-          "city": "London",
-          "country": "UK"
-      }
-    },
-    {
-      "image": "https://i.ibb.co/y0TCYqw/Human-Resources-Specialist-2.jpg",
-      "company_logo": "https://i.ibb.co/DKKwR6P/logo1.png",
+      "image": "https://i.ibb.co/1ZHQRcj/Supply-Chain-Analyst.jpg",
+      "company_logo": "https://i.ibb.co/CKBBXsz/logo4.png",
       "job_category": "hybrid",
-      "job_title": "Human Resources Specialist",
-      "job_description": "Join our HR team as a Human Resources Specialist. Manage recruitment processes, handle employee relations, and contribute to the development of HR policies. Collaborate with department heads for workforce planning.",
+      "job_title": "Supply Chain Analyst",
+      "job_description": "Join our supply chain team as a Supply Chain Analyst. Analyze supply chain data, optimize logistics, and collaborate with vendors for efficient operations. Contribute to continuous improvement initiatives.",
       "responsibilities": [
-        "Manage recruitment processes, from sourcing to onboarding.",
-        "Handle employee relations and address HR-related inquiries.",
-        "Contribute to the development and implementation of HR policies.",
-        "Collaborate with department heads for workforce planning.",
-        "Stay updated on HR laws, regulations, and best practices."
+        "Analyze supply chain data and provide insights for optimization.",
+        "Optimize logistics and collaborate with vendors for efficient operations.",
+        "Contribute to continuous improvement initiatives in the supply chain.",
+        "Collaborate with cross-functional teams for effective supply chain management.",
+        "Stay updated on supply chain trends and technologies."
       ],
-      "posting_date": "2023-03-01",
-      "deadline": "2023-04-01",
-      "job_author": "Sophia Turner",
-      "salary_range": "$60,000 - $80,000",
+      "posting_date": "11/14/2023",
+      "deadline": "12/14/2023",
+      "job_author": "Emma Watson",
+      "author_email": "emma@watson.com",
+      "salary_range": "$65,000 - $85,000",
       "total_applied": 0,
       "location": {
-          "city": "Sydney",
-          "country": "Australia"
+          "city": "Berlin",
+          "country": "Germany"
       }
     },
     {
@@ -173,9 +108,10 @@
         "Collaborate with marketing teams to enhance brand visibility.",
         "Stay updated on social media trends and platform algorithms."
       ],
-      "posting_date": "2023-03-05",
-      "deadline": "2023-04-05",
-      "job_author": "Ethan Miller",
+      "posting_date": "11/25/2023",
+      "deadline": "12/25/2023",
+      "job_author": "John Doe",
+      "author_email": "john.doe@gmail.com",
       "salary_range": "$25,000 - $30,000 (Pro-rated)",
       "total_applied": 0,
       "location": {
@@ -196,9 +132,10 @@
         "Stay updated on biomedical research trends and breakthroughs.",
         "Ensure adherence to ethical and safety guidelines in research."
       ],
-      "posting_date": "2023-03-10",
-      "deadline": "2023-04-10",
-      "job_author": "Dr. Samantha White",
+      "posting_date": "11/15/2023",
+      "deadline": "12/15/2023",
+      "job_author": "Borhan Uddin",
+      "author_email": "borhanuddindns420@gmail.com",
       "salary_range": "$90,000 - $110,000",
       "total_applied": 0,
       "location": {
@@ -219,33 +156,11 @@
         "Collaborate with IT teams to ensure the organization's cybersecurity.",
         "Stay updated on cybersecurity threats and mitigation strategies."
       ],
-      "posting_date": "2023-03-15",
-      "deadline": "2023-04-15",
-      "job_author": "Robert Johnson",
+      "posting_date": "11/11/2023",
+      "deadline": "12/11/2023",
+      "job_author": "Emma Watson",
+      "author_email": "emma@watson.com",
       "salary_range": "$80,000 - $100,000",
-      "total_applied": 0,
-      "location": {
-          "city": "Berlin",
-          "country": "Germany"
-      }
-    },
-    {
-      "image": "https://i.ibb.co/1ZHQRcj/Supply-Chain-Analyst.jpg",
-      "company_logo": "https://i.ibb.co/CKBBXsz/logo4.png",
-      "job_category": "hybrid",
-      "job_title": "Supply Chain Analyst",
-      "job_description": "Join our supply chain team as a Supply Chain Analyst. Analyze supply chain data, optimize logistics, and collaborate with vendors for efficient operations. Contribute to continuous improvement initiatives.",
-      "responsibilities": [
-        "Analyze supply chain data and provide insights for optimization.",
-        "Optimize logistics and collaborate with vendors for efficient operations.",
-        "Contribute to continuous improvement initiatives in the supply chain.",
-        "Collaborate with cross-functional teams for effective supply chain management.",
-        "Stay updated on supply chain trends and technologies."
-      ],
-      "posting_date": "2023-03-20",
-      "deadline": "2023-04-20",
-      "job_author": "Karen Miller",
-      "salary_range": "$65,000 - $85,000",
       "total_applied": 0,
       "location": {
           "city": "Berlin",
@@ -265,9 +180,10 @@
         "Manage event budgets and track expenses.",
         "Stay updated on event trends and industry best practices."
       ],
-      "posting_date": "2023-03-25",
-      "deadline": "2023-04-25",
-      "job_author": "Alexandra Davis",
+      "posting_date": "11/17/2023",
+      "deadline": "12/17/2023",
+      "job_author": "Emma Watson",
+      "author_email": "emma@watson.com",
       "salary_range": "$30,000 - $35,000 (Pro-rated)",
       "total_applied": 0,
       "location": {
@@ -288,9 +204,10 @@
             "Collaborate with cross-functional teams for optimal network performance.",
             "Stay updated on network technology trends."
         ],
-        "posting_date": "2023-04-01",
-        "deadline": "2023-05-01",
-        "job_author": "Michelle Turner",
+        "posting_date": "10/19/2023",
+        "deadline": "11/19/2023",
+        "job_author": "Emma Watson",
+        "author_email": "emma@watson.com",
         "salary_range": "$70,000 - $90,000",
         "total_applied": 0,
         "location": {
@@ -311,9 +228,10 @@
             "Collaborate with designers and writers to create compelling marketing materials.",
             "Stay updated on marketing trends and industry best practices."
         ],
-        "posting_date": "2023-04-05",
-        "deadline": "2023-05-05",
-        "job_author": "Christopher Mitchell",
+        "posting_date": "10/25/2023",
+        "deadline": "11/20/2023",
+        "job_author": "Emma Watson",
+        "author_email": "emma@watson.com",
         "salary_range": "$60,000 - $80,000",
         "total_applied": 0,
         "location": {
@@ -334,15 +252,64 @@
             "Conduct financial forecasting and budgeting.",
             "Stay updated on financial industry trends."
         ],
-        "posting_date": "2023-04-10",
-        "deadline": "2023-05-10",
-        "job_author": "Emily Lewis",
+        "posting_date": "11/18/2023",
+        "deadline": "12/18/2023",
+        "job_author": "Emma Watson",
+        "author_email": "emma@watson.com",
         "salary_range": "$75,000 - $95,000",
         "total_applied": 0,
         "location": {
             "city": "Paris",
             "country": "France"
         }
+    },
+    {
+      "image": "https://i.ibb.co/y0TCYqw/Human-Resources-Specialist-2.jpg",
+      "company_logo": "https://i.ibb.co/DKKwR6P/logo1.png",
+      "job_category": "hybrid",
+      "job_title": "Human Resources Specialist",
+      "job_description": "Join our HR team as a Human Resources Specialist. Manage recruitment processes, handle employee relations, and contribute to the development of HR policies. Collaborate with department heads for workforce planning.",
+      "responsibilities": [
+        "Manage recruitment processes, from sourcing to onboarding.",
+        "Handle employee relations and address HR-related inquiries.",
+        "Contribute to the development and implementation of HR policies.",
+        "Collaborate with department heads for workforce planning.",
+        "Stay updated on HR laws, regulations, and best practices."
+      ],
+      "posting_date": "11/23/2023",
+      "deadline": "12/15/2023",
+      "job_author": "John Doe",
+      "author_email": "john.doe@gmail.com",
+      "salary_range": "$60,000 - $80,000",
+      "total_applied": 0,
+      "location": {
+          "city": "Sydney",
+          "country": "Australia"
+      }
+    },
+    {
+      "image": "https://i.ibb.co/XCVWsdh/Financial-Analyst.jpg",
+      "company_logo": "https://i.ibb.co/4gF6YHs/logo7.png",
+      "job_category": "hybrid",
+      "job_title": "Financial Analyst",
+      "job_description": "Exciting opportunity for a Financial Analyst to join our finance team. Analyze financial data, create reports, and provide insights for strategic decision-making. Collaborate with departments to ensure financial goals are met.",
+      "responsibilities": [
+        "Analyze financial data to provide insights.",
+        "Create reports for strategic decision-making.",
+        "Collaborate with departments to ensure financial goals are met.",
+        "Conduct financial forecasting and budgeting.",
+        "Stay updated on financial industry trends."
+      ],
+      "posting_date": "11/26/2023",
+      "deadline": "12/20/2023",
+      "job_author": "Borhan Uddin",
+      "author_email": "borhanuddindns420@gmail.com",
+      "salary_range": "$70,000 - $90,000",
+      "total_applied": 0,
+      "location": {
+          "city": "Berlin",
+          "country": "Germany"
+      }
     },
     {
         "image": "https://i.ibb.co/7vLdP23/Customer-Support.jpg",
@@ -357,9 +324,10 @@
             "Collaborate with the support team to improve customer satisfaction.",
             "Stay updated on product knowledge and features."
         ],
-        "posting_date": "2023-04-15",
-        "deadline": "2023-05-15",
-        "job_author": "Sophie Turner",
+        "posting_date": "11/18/2023",
+        "deadline": "12/18/2023",
+        "job_author": "Joe Root",
+        "author_email": "joe@root.com",
         "salary_range": "$22,000 - $27,000 (Pro-rated)",
         "total_applied": 0,
         "location": {
@@ -380,9 +348,10 @@
             "Ensure projects comply with safety and environmental regulations.",
             "Stay updated on civil engineering trends and technologies."
         ],
-        "posting_date": "2023-04-20",
-        "deadline": "2023-05-20",
-        "job_author": "Ryan Roberts",
+        "posting_date": "11/22/2023",
+        "deadline": "12/22/2023",
+        "job_author": "Joe Root",
+        "author_email": "joe@root.com",
         "salary_range": "$80,000 - $100,000",
         "total_applied": 0,
         "location": {
@@ -402,15 +371,40 @@
             "Collaborate with cross-functional teams, participate in meetings, and communicate effectively to understand and achieve project goals.",
             "Continuously learn, staying updated on industry trends, and actively seek professional development opportunities for enhanced skill acquisition."
         ],
-        "posting_date": "2023-04-25",
-        "deadline": "2023-05-25",
-        "job_author": "Benjamin Clark",
+        "posting_date": "11/21/2023",
+        "deadline": "12/21/2023",
+        "job_author": "Joe Root",
+        "author_email": "joe@root.com",
         "salary_range": "$55,000 - $75,000",
         "total_applied": 0,
         "location": {
             "city": "London",
             "country": "UK"
         }
+    },
+    {
+      "image": "https://i.ibb.co/F86FKmY/Graphic-Designer.jpg",
+      "company_logo": "https://i.ibb.co/dcFc75x/logo3.png",
+      "job_category": "remote",
+      "job_title": "Graphic Designer",
+      "job_description": "Exciting opportunity for a Graphic Designer to join our creative team. Create visually stunning designs for various platforms, collaborate with marketing teams, and bring creative concepts to life.",
+      "responsibilities": [
+        "Create visually stunning designs for various platforms.",
+        "Collaborate with marketing teams to understand design requirements.",
+        "Bring creative concepts to life through design.",
+        "Iterate on designs based on feedback from stakeholders.",
+        "Stay updated on design trends and software tools."
+      ],
+      "posting_date": "11/22/2023",
+      "deadline": "12/11/2023",
+      "job_author": "John Doe",
+      "author_email": "john.doe@gmail.com",
+      "salary_range": "$50,000 - $70,000",
+      "total_applied": 0,
+      "location": {
+          "city": "London",
+          "country": "UK"
+      }
     },
     {
         "image": "https://i.ibb.co/Zzkgj33/Human-Resources-Specialist.jpg",
@@ -425,15 +419,40 @@
             "Collaborate with department heads for workforce planning.",
             "Stay updated on HR laws, regulations, and best practices."
         ],
-        "posting_date": "2023-05-01",
-        "deadline": "2023-06-01",
-        "job_author": "Sophia Davis",
+        "posting_date": "11/23/2023",
+        "deadline": "12/18/2023",
+        "job_author": "Joe Root",
+        "author_email": "joe@root.com",
         "salary_range": "$65,000 - $85,000",
         "total_applied": 0,
         "location": {
             "city": "San Francisco",
             "country": "USA"
         }
+    },
+    {
+      "image": "https://i.ibb.co/k2b6MRF/Marketing-Specialist.jpg",
+      "company_logo": "https://i.ibb.co/3dRSQWR/logo6.png",
+      "job_category": "remote",
+      "job_title": "Marketing Specialist",
+      "job_description": "Join our marketing team as a Marketing Specialist. Develop and execute marketing campaigns, analyze performance metrics, and contribute to overall brand strategy. Collaborate with designers and writers to create compelling marketing materials.",
+      "responsibilities": [
+        "Develop and execute marketing campaigns.",
+        "Analyze performance metrics and adjust strategies accordingly.",
+        "Contribute to overall brand strategy.",
+        "Collaborate with designers and writers to create compelling marketing materials.",
+        "Stay updated on marketing trends and industry best practices."
+      ],
+      "posting_date": "11/23/2023",
+      "deadline": "12/23/2023",
+      "job_author": "Borhan Uddin",
+      "author_email": "borhanuddindns420@gmail.com",
+      "salary_range": "$55,000 - $75,000",
+      "total_applied": 0,
+      "location": {
+          "city": "Singapore",
+          "country": "Singapore"
+      }
     },
     {
         "image": "https://i.ibb.co/ck0gVFr/Social-Media-Coordinator.jpg",
@@ -448,10 +467,11 @@
             "Collaborate with marketing teams to enhance brand visibility.",
             "Stay updated on social media trends and platform algorithms."
         ],
-        "posting_date": "2023-05-05",
-        "deadline": "2023-06-05",
-        "job_author": "Nathan Miller",
-        "salary_range": "$28,000 - $33,000 (Pro-rated)",
+        "posting_date": "11/30/2023",
+        "deadline": "12/30/2023",
+        "job_author": "Joe Root",
+        "author_email": "joe@root.com",
+        "salary_range": "$28,000 - $33,000",
         "total_applied": 0,
         "location": {
             "city": "New York",
