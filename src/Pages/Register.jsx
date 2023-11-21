@@ -10,7 +10,7 @@ import useAuth from "../Hooks/useAuth";
 
 const Register = () => {
   const [showPass, setShowPass] = useState(true);
-  const { createUser, updateUserProfile, logout } = useAuth();
+  const { createUser, updateUserProfile, logout, googleLogin } = useAuth();
   const navigate = useNavigate();
 
   // Handle create new user
@@ -47,6 +47,16 @@ const Register = () => {
       .catch((err) => {
         console.log(err.message);
       });
+  };
+
+  // Handle google login
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+        navigate("/")
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -134,7 +144,7 @@ const Register = () => {
         </form>
         <div>
           <p className="text-center mt-6 mb-2">Login with</p>
-          <div className="border py-3 rounded-md flex justify-center items-center gap-3 cursor-pointer hover:bg-base-200 duration-300">
+          <div onClick={handleGoogleLogin} className="border py-3 rounded-md flex justify-center items-center gap-3 cursor-pointer hover:bg-base-200 duration-300">
             <span>
               <FcGoogle />{" "}
             </span>

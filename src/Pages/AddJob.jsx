@@ -48,6 +48,7 @@ const AddJob = () => {
     axios.post("/jobs", newJob)
     .then(data => {
         if (data.data.insertedId) {
+          form.reset()
           Swal.fire({
             icon: "success",
             title: "Successfully posted the job",

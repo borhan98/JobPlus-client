@@ -10,17 +10,18 @@ const AllJobs = () => {
   const [searchValue, setSearchValue] = useState("");
   const axios = useAxios();
 
+  
   const plit = "2023-11-15";
   const date = plit.split("-").join("/");
   const currentDate = new Date().toLocaleDateString();
-//   console.log(currentDate);
+  //   console.log(currentDate);
   const date1 = new Date(date);
   const date2 = new Date(currentDate);
-//   if (date1 > date2) {
-//     console.log("date1 boro");
-//   } else {
-//     console.log("date2 boro");
-//   }
+  //   if (date1 > date2) {
+  //     console.log("date1 boro");
+  //   } else {
+  //     console.log("date2 boro");
+  //   }
 
   useEffect(() => {
     axios.get("/jobs").then((data) => setJobs(data.data));
@@ -56,18 +57,24 @@ const AllJobs = () => {
         </div>
       </div>
       <h3 className="font-bold mb-4">
-        Total job: {searchJob.length ? searchJob.length : jobs.length}
+        Total job:
+        {searchValue ? (searchJob.length ? searchJob.length : 0) : jobs.length}
       </h3>
-      {searchJob.length === 0
-        ? <>
-        <p className="first-letter:text-2xl">Sorry, we couldn&#39;t find any matching results for your search. Please try again with different keywords.</p>
-        <figure className="flex justify-center">
-          <img src={dataNotFoundImage} alt="" />
-        </figure>
+      {searchJob.length === 0 ? (
+        <>
+          <p className="first-letter:text-2xl">
+            Sorry, we couldn&#39;t find any matching results for your search.
+            Please try again with different keywords.
+          </p>
+          <figure className="flex justify-center">
+            <img src={dataNotFoundImage} alt="" />
+          </figure>
         </>
-        : searchJob.length === 0
-        ? jobs.map((job) => <Job key={job._id} job={job} />)
-        : searchJob.map((job) => <Job key={job._id} job={job} />)}
+      ) : searchJob.length === 0 ? (
+        jobs.map((job) => <Job key={job._id} job={job} />)
+      ) : (
+        searchJob.map((job) => <Job key={job._id} job={job} />)
+      )}
     </div>
   );
 };
