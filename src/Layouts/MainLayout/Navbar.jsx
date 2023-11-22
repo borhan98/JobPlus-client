@@ -16,17 +16,19 @@ const Navbar = () => {
       <NavLink className={activeRoute} to={"/alljobs"}>
         All Jobs
       </NavLink>
-      {
-        user && <><NavLink className={activeRoute} to={"/appliedjobs"}>
-        Applied Jobs
-      </NavLink>
-      <NavLink className={activeRoute} to={"/addjob"}>
-        Add a Job
-      </NavLink>
-      <NavLink className={activeRoute} to={"/myjobs"}>
-        My Jobs
-      </NavLink></>
-      }
+      {user && (
+        <>
+          <NavLink className={activeRoute} to={"/appliedjobs"}>
+            Applied Jobs
+          </NavLink>
+          <NavLink className={activeRoute} to={"/addjob"}>
+            Add a Job
+          </NavLink>
+          <NavLink className={activeRoute} to={"/myjobs"}>
+            My Jobs
+          </NavLink>
+        </>
+      )}
       <NavLink className={activeRoute} to={"/blogs"}>
         Blogs
       </NavLink>

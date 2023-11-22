@@ -60,14 +60,14 @@ const MyJob = ({ job, myjobs, setMyJobs }) => {
   }
 
   return (
-    <div className="grid gap-2 grid-cols-12 p-4 bg-base-100 items-center border-b border-l border-r mb-8 rounded-md">
-      <div className="col-span-2 border-r">
+    <div className="grid gap-2 grid-cols-12 p-4 bg-base-200 items-center border-b border-l border-r mb-8 rounded-md">
+      <div className="col-span-2">
         <h5>Job Author:</h5>
         <h3 className="text-xl font-medium">{job_author}</h3>
       </div>
-      <div className="col-span-7 border-r space-y-4">
+      <div className="col-span-7 border-x px-2 space-y-4">
         <h3 className="text-2xl font-semibold capitalize">{job_title}</h3>
-        <div className="flex gap-5">
+        <div className="space-y-1">
           <p className="flex items-center text-zinc-600">
             <span className="text-[#FF5200] text-xl mr-1">
               <CiLocationOn />
@@ -95,7 +95,7 @@ const MyJob = ({ job, myjobs, setMyJobs }) => {
             <span className="text-[#FF5200] text-xl mr-1">
               <FaChessBishop />
             </span>
-            <span>{total_applied}</span>
+            <span>{total_applied} Applied</span>
           </p>
         </div>
       </div>
