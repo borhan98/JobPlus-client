@@ -8,7 +8,7 @@ const Newsletter = () => {
     }
 
   return (
-    <div className="container mx-auto flex items-center gap-4 px-10 py-14 bg-[#FFE1D3] rounded-md">
+    <div className="container mx-auto flex items-center gap-4 px-10 py-14 mb-14 bg-[#FFE1D3] rounded-md">
       <figure className="flex-1">
         <img className="w-full" src={newsletterPhoto} alt="Newsletter image" />
       </figure>
@@ -21,7 +21,6 @@ const Newsletter = () => {
           alerts, expert advice, and industry insights delivered to your inbox.
           Stay ahead in your job search—subscribe now!
         </p>
-        {/* Name and Email Field */}
         <form onSubmit={handleSubscribe} className="space-y-4">
           <div>
             <input
