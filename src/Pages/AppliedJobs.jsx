@@ -21,7 +21,6 @@ const AppliedJobs = () => {
       const jobByCategory = appliedJobs.filter(
         (job) => job.job_category === val
       );
-    //   setFilterJobs(jobByCategory)
       if (jobByCategory.length) {
         setFilterJobs(jobByCategory);
       } else {
@@ -67,7 +66,7 @@ const AppliedJobs = () => {
           <label htmlFor="category">Filter: </label>
           <select
             onChange={() => handleFilter(event.target.value)}
-            className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+            className="border border-black pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
             id="category"
             name="category"
           >
@@ -79,18 +78,22 @@ const AppliedJobs = () => {
           </select>
         </div>
       </div>
-      {isData
-        ? filterJobs.length
-          ? filterJobs.map((job) => <Job key={job._id} job={job} />)
-          : appliedJobs.map((job) => <Job key={job._id} job={job} />)
-        : <>
-        <p className="text-2xl font-bold text-center">
-          You didn&#39;t applied any job yet
-        </p>
-        <figure className="flex justify-center">
-          <img src={NoDataImage} alt="No Data Found Image" />
-        </figure>
-      </>}
+      {isData ? (
+        filterJobs.length ? (
+          filterJobs.map((job) => <Job key={job._id} job={job} />)
+        ) : (
+          appliedJobs.map((job) => <Job key={job._id} job={job} />)
+        )
+      ) : (
+        <>
+          <p className="text-2xl font-bold text-center">
+            You didn&#39;t applied any job yet
+          </p>
+          <figure className="flex justify-center">
+            <img src={NoDataImage} alt="No Data Found Image" />
+          </figure>
+        </>
+      )}
     </div>
   );
 };

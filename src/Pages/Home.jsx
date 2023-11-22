@@ -1,5 +1,6 @@
 import Banner from "../components/Banner";
 import JobCategory from "../components/JobCategory";
+import Newsletter from "../components/Newsletter";
 
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <Banner />
             <JobCategory />
+            <Newsletter />
         </div>
     );
 };

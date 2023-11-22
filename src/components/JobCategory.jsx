@@ -57,30 +57,35 @@ const JobCategory = () => {
             {jobs.map((job) => (
               <Job key={job._id} job={job} />
             ))}
+            {/* <p>Pagination</p> */}
           </TabPanel>
           <TabPanel>
             <h3 className="font-bold mb-4">Total job: {jobs.length}</h3>
             {jobs.map((job) => (
               <Job key={job._id} job={job} />
             ))}
+            {/* <p>Pagination</p> */}
           </TabPanel>
           <TabPanel>
             <h3 className="font-bold mb-4">Total job: {jobs.length}</h3>
             {jobs.map((job) => (
               <Job key={job._id} job={job} />
             ))}
+            {/* <p>Pagination</p> */}
           </TabPanel>
           <TabPanel>
             <h3 className="font-bold mb-4">Total job: {jobs.length}</h3>
             {jobs.map((job) => (
               <Job key={job._id} job={job} />
             ))}
+            {/* <p>Pagination</p> */}
           </TabPanel>
           <TabPanel>
             <h3 className="font-bold mb-4">Total job: {jobs.length}</h3>
             {jobs.map((job) => (
               <Job key={job._id} job={job} />
             ))}
+            {/* <p>Pagination</p> */}
           </TabPanel>
         </div>
       </Tabs>
