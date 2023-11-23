@@ -34,7 +34,7 @@ const MainLayout = ({ children }) => {
               </label>
             </div>
             <div className="grow">
-              <h2 className="text-4xl font-bold">
+              <h2 className="text-xl md:text-4xl font-bold">
                 Job<span className="text-[#FF5200]">Plus</span>
               </h2>
             </div>
@@ -57,7 +57,7 @@ const MainLayout = ({ children }) => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="menu p-4 w-80 min-h-full bg-base-200">
+        <div className="menu p-4 w-6/12 md:w-80 min-h-full bg-base-200">
           {/* Sidebar content here */}
           <Sidebar />
         </div>

@@ -20,22 +20,22 @@ const AllJobs = () => {
   }, [searchValue, jobs]);
 
   return (
-    <div className="container mx-auto my-10">
-      <div className="text-center max-w-xl mx-auto mb-14">
-        <h3 className="text-2xl font-medium text-zinc-600 mb-4">
+    <div className="container mx-auto px-2 lg:px-0 my-10">
+      <div className="text-center max-w-xl mx-auto mb-4 md:mb-10 lg:mb-14">
+        <h3 className="text-2xl md:text-3xl font-semibold text-zinc-600 mb-4">
           All Jobs Await You
         </h3>
-        <p className="text-zinc-600">
+        <p className="text-zinc-600 text-sm md:text-base">
           Endless Opportunities Await. Explore All Jobs. Find your perfect fit,
           from entry-level to executive roles. Your next career move starts
           here!
         </p>
       </div>
-      <div className="w-fit mx-auto mb-10">
-        <div className="join">
+      <div className="w-fit mx-auto flex justify-center mb-10">
+        <div className="join w-9/12">
           <input
             onInput={() => setSearchValue(event.target.value)}
-            className="input input-bordered join-item"
+            className="input input-bordered w-full text-sm md:text-base px-1 md:px-3 join-item"
             placeholder="Search by job name"
           />
           <button className="px-4 bg-[#FF5200] text-white text-xl join-item">

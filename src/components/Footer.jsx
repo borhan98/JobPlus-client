@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <>
       <div className="bg-[#2B3940] py-14 mt-6">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <div className="container mx-auto px-2 lg:px-0 grid gap-14 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <h2 className="text-4xl font-bold text-white mb-4">
               Job<span className="text-[#FF5200]">Plus</span>

@@ -42,15 +42,15 @@ const FeatureJob = ({ job }) => {
           </p>
         </div>
       </div>
-      <h3 className="text-2xl font-medium mt-6 mb-2 flex-1">{job_title}</h3>
+      <h3 className="text-xl md:text-2xl font-medium mt-6 mb-2 flex-1">{job_title}</h3>
       <p className="py-3 px-4 bg-white w-fit rounded-md capitalize">
         {job_category}
       </p>
-      <div className="flex justify-between mt-4">
+      <div className="flex justify-between items-center font-bold mt-4">
         <span className="">{salary_range}</span>
-        <button>
+        <button className="flex gap-2 items-center border px-3 py-2 rounded-md">
             <span>More</span>
-            <span><FaArrowRightLong /></span>
+            <span className="text-[#FF5200]"><FaArrowRightLong /></span>
         </button>
       </div>
     </div>

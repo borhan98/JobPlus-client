@@ -7,12 +7,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import useAuth from "../Hooks/useAuth";
 import toast from "react-hot-toast";
+import useAxios from "../Hooks/useAxios";
 
 const Login = () => {
   const [showPass, setShowPass] = useState(true);
-  const { login, googleLogin } = useAuth();
+  const { user, login, googleLogin } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
+  const axios = useAxios();
+  const loggedInUser = user?.email;
 
   // Handle Login user
   const handleLogin = (e) => {
@@ -24,13 +27,19 @@ const Login = () => {
     // Login
     login(email, password)
       .then(() => {
+        const user = { email };
+        axios.post("/jwt", user, { withCredentials: true }).then((data) => {
+          console.log(data.data.success);
+          if (data.data.success) {
+            navigate(location.state || "/");
+          }
+        });
         toast.success("Logged In successfully!", {
           style: {
             background: "#333",
             color: "#fff",
           },
         });
-        navigate(location.state || "/");
       })
       .catch((err) => {
         console.log(err.message);
@@ -41,6 +50,13 @@ const Login = () => {
   const handleGoogleLogin = () => {
     googleLogin()
       .then(() => {
+        const email = loggedInUser;
+        const user = { email };
+        axios.post("/jwt", user, { withCredentials: true }).then((data) => {
+          if (data.data.success) {
+            navigate(location.state || "/");
+          }
+        });
         toast.success("Logged In successfully!", {
           style: {
             background: "#333",
@@ -53,22 +69,22 @@ const Login = () => {
   };
 
   return (
-    <div className="container mx-auto flex items-center py-10">
+    <div className="container mx-auto px-2 lg:px-0 flex flex-col md:flex-row items-center py-10">
       <figure className="flex-1">
         <img src={LoginImage} alt="Login Image" draggable={false} />
       </figure>
-      <div className="flex-1 shadow p-4">
-        <p className="w-fit ml-auto text-zinc-600">
+      <div className="flex-1 flex flex-col shadow p-4">
+        <p className="order-4 md:order-1 w-fit mx-auto md:mx-0 md:ml-auto mt-6 md:mt-0 text-zinc-600">
           New User?{" "}
           <Link to={"/register"} className="text-[#FF5200] underline">
             Sign Up
           </Link>
         </p>
-        <div className="mt-20 mb-6">
-          <h3 className="text-3xl font-semibold">Welcome Back!</h3>
-          <p className="text-zinc-600">Login to continue</p>
+        <div className="order-1 md:order-2 mt-6 md:mt-13 lg:mt-20 mb-6">
+          <h3 className="text-xl md:text-3xl font-semibold">Welcome Back!</h3>
+          <p className="text-zinc-600 text-sm md:text-base">Login to continue</p>
         </div>
-        <form onSubmit={handleLogin} className="space-y-3">
+        <form onSubmit={handleLogin} className="order-2 md:order-3 space-y-3">
           <div className="relative">
             <input
               type="text"
@@ -111,7 +127,7 @@ const Login = () => {
             </button>
           </div>
         </form>
-        <div>
+        <div className="order-3 md:order-4">
           <p className="text-center mt-6 mb-2">Login with</p>
           <div
             onClick={handleGoogleLogin}

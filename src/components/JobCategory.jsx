@@ -17,9 +17,9 @@ const JobCategory = () => {
   }, [axios, jobCategory]);
 
   return (
-    <div className="mb-10">
+    <div className="my-14">
       <Tabs defaultIndex={0} onSelect={(index) => console.log(index)}>
-        <TabList className={"flex w-fit mx-auto"}>
+        <TabList className={"flex w-fit mx-auto px-2 lg:px-0 flex-wrap"}>
           <Tab
             className={`px-3 py-1 rounded-t border-b border-l`}
             onClick={() => setJobCategory("all-jobs")}
@@ -51,7 +51,7 @@ const JobCategory = () => {
             Part Time
           </Tab>
         </TabList>
-        <div className="container mx-auto mt-5">
+        <div className="container mx-auto px-2 lg:px-0 mt-5">
           <TabPanel>
             <h3 className="font-bold mb-4">Total job: {jobs.length}</h3>
             {jobs.map((job) => (

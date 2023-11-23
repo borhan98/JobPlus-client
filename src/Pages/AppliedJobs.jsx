@@ -30,7 +30,7 @@ const AppliedJobs = () => {
   };
 
   useEffect(() => {
-    axios.get(`/applications?email=${user?.email}`).then((data) => {
+    axios.get(`/applications?email=${user?.email}`, { withCredentials: true }).then((data) => {
       const ids = data.data.map((job) => job.jobId);
       setAppliedIds(ids);
     });
@@ -43,12 +43,12 @@ const AppliedJobs = () => {
   }, [axios, appliedIds]);
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-2 lg:px-0">
       <div className="text-center max-w-xl mx-auto my-14">
-        <h3 className="text-2xl font-medium text-zinc-600 mb-4">
+        <h3 className="text-2xl md:text-3xl font-semibold text-zinc-600 mb-4">
           Your application history
         </h3>
-        <p className="text-zinc-600">
+        <p className="text-zinc-600 text-sm md:text-base">
           Application History. Your roadmap to success. Easily track, review,
           and manage all your job applications in one place.
         </p>
@@ -66,7 +66,7 @@ const AppliedJobs = () => {
           <label htmlFor="category">Filter: </label>
           <select
             onChange={() => handleFilter(event.target.value)}
-            className="border border-black pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+            className="border border-black pl-1 md:pl-3 py-2 md:py-4 text-sm md:text-base rounded-md focus:outline-none focus:shadow-md w-full"
             id="category"
             name="category"
           >
@@ -78,22 +78,24 @@ const AppliedJobs = () => {
           </select>
         </div>
       </div>
-      {isData ? (
-        filterJobs.length ? (
-          filterJobs.map((job) => <Job key={job._id} job={job} />)
+      <div>
+        {isData ? (
+          filterJobs.length ? (
+            filterJobs.map((job) => <Job key={job._id} job={job} />)
+          ) : (
+            appliedJobs.map((job) => <Job key={job._id} job={job} />)
+          )
         ) : (
-          appliedJobs.map((job) => <Job key={job._id} job={job} />)
-        )
-      ) : (
-        <>
-          <p className="text-2xl font-bold text-center">
-            You didn&#39;t applied any job yet
-          </p>
-          <figure className="flex justify-center">
-            <img src={NoDataImage} alt="No Data Found Image" />
-          </figure>
-        </>
-      )}
+          <>
+            <p className="text-2xl font-bold text-center">
+              You didn&#39;t applied any job yet
+            </p>
+            <figure className="flex justify-center">
+              <img src={NoDataImage} alt="No Data Found Image" />
+            </figure>
+          </>
+        )}
+      </div>
     </div>
   );
 };

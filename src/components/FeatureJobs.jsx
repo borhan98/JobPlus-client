@@ -10,12 +10,12 @@ const FeatureJobs = () => {
     axios.get("/featureJobs").then((data) => setFeatureJobs(data.data));
   }, [axios]);
   return (
-    <div className="container mx-auto my-14">
+    <div className="container mx-auto px-2 lg:px-0 my-14">
       <div className="text-center max-w-xl mx-auto mb-14">
-        <h3 className="text-2xl font-medium text-zinc-600 mb-4">
+        <h3 className="text-2xl md:text-3xl font-semibold text-zinc-600 mb-4">
           Featured jobs
         </h3>
-        <p className="text-zinc-600">
+        <p className="text-zinc-600 text-sm md:text-base">
           Unlock top-tier opportunities handpicked for you. Dive into our
           curated Featured Jobs for a shortcut to success. Your next career move
           starts here.

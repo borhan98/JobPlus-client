@@ -75,22 +75,22 @@ const Register = () => {
   };
 
   return (
-    <div className="container mx-auto flex items-center py-10">
+    <div className="container mx-auto px-2 lg:px-0 flex flex-col md:flex-row items-center py-10">
       <figure className="flex-1">
         <img src={LoginImage} alt="Login Image" draggable={false} />
       </figure>
-      <div className="flex-1 shadow p-4">
-        <p className="w-fit ml-auto text-zinc-600">
+      <div className="flex-1 flex flex-col  shadow p-4">
+        <p className="order-4 md:order-1 w-fit mx-auto md:mx-0 md:ml-auto mt-6 md:mt-0 text-zinc-600">
           Already have an account?{" "}
           <Link to={"/login"} className="text-[#FF5200] underline">
             Sign In
           </Link>
         </p>
-        <div className="mt-20 mb-6">
-          <h3 className="text-3xl font-semibold">Welcome!</h3>
-          <p className="text-zinc-600">Register to continue</p>
+        <div className="order-1 md:order-2 mt-6 md:mt-13 lg:mt-20 mb-6">
+          <h3 className="text-xl md:text-3xl font-semibold">Welcome!</h3>
+          <p className="text-zinc-600 text-sm md:text-base">Register to continue</p>
         </div>
-        <form onSubmit={handleCreateUser} className="space-y-3">
+        <form onSubmit={handleCreateUser} className="order-2 md:order-3 space-y-3">
           <div className="relative">
             <input
               type="text"
@@ -157,7 +157,7 @@ const Register = () => {
             </button>
           </div>
         </form>
-        <div>
+        <div className="order-3 md:order-4">
           <p className="text-center mt-6 mb-2">Login with</p>
           <div onClick={handleGoogleLogin} className="border py-3 rounded-md flex justify-center items-center gap-3 cursor-pointer hover:bg-base-200 duration-300">
             <span>

@@ -129,7 +129,12 @@ const JobDetails = () => {
           >
             Apply Now
           </button>
-          <ApplyModal jobId={_id} applied={applied} setApplied={setApplied} />
+          <ApplyModal
+            jobId={_id}
+            applied={applied}
+            setApplied={setApplied}
+            author_email={author_email}
+          />
         </div>
       </div>
     </div>

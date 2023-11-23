@@ -15,7 +15,7 @@ const ApplyModal = ({ jobId, applied, setApplied }) => {
     const email = form.email.value;
     const resume = form.resume.value;
     const application = { jobId, name, email, resume };
-    const applicant = {increaseApplicant: 1}
+    const applicant = { increaseApplicant: 1 };
 
     // application POST API
     axios.post("/applications", application).then((data) => {
@@ -32,9 +32,9 @@ const ApplyModal = ({ jobId, applied, setApplied }) => {
 
     // handle applicant number
     axios.put(`/jobs/${jobId}`, applicant).then((data) => {
-        if (data.data.modifiedCount) {
-            setApplied(++applied)
-        }
+      if (data.data.modifiedCount) {
+        setApplied(++applied);
+      }
     });
   };
 

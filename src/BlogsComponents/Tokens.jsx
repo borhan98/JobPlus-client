@@ -1,22 +1,22 @@
 const Tokens = () => {
   return (
     <div className="space-y-6 text-zinc-600">
-      <h2 className="text-3xl font-bold border-l px-2 py-4 bg-base-200 rounded">
+      <h2 className="text-xl md:text-3xl font-semibold md:font-bold border-l px-2 py-4 bg-base-200 rounded">
         What is an access token and refresh token? How do they work and where
         should we store them on the client-side?
       </h2>
       {/* Access token */}
       <div>
-        <h3 className={"text-2xl font-medium mb-4"}>Access token</h3>
+        <h3 className={"text-xl md:text-2xl font-medium mb-4"}>Access token</h3>
         <div className="space-y-4">
-          <p>
+          <p className="text-sm md:text-base">
             Access token is an encoded data about an user to secure the user
             data and some process. Access token is used for token-based
             authentication to create an application more secure. If implement
             token based authentication to an application, it will be more
             secured.
           </p>
-          <p>
+          <p className="text-sm md:text-base">
             An access token is created by the login system when an user logs in
             to the system. When an user successfully logs in to an applicaition,
             the application create an access token for the specific user. Then
@@ -26,8 +26,8 @@ const Tokens = () => {
       </div>
       {/* Refresh token */}
       <div>
-        <h3 className={"text-2xl font-medium mb-4"}>Refresh token</h3>
-        <p>
+        <h3 className={"text-xl md:text-2xl font-medium mb-4"}>Refresh token</h3>
+        <p className="text-sm md:text-base">
           Refresh token is a token which create a new access token for user.
           typically, access token has an expiration date and it will expire
           after the date is over. Once it expire, the user need to login again
@@ -37,10 +37,10 @@ const Tokens = () => {
       </div>
       {/* Keep them safe */}
       <div>
-        <h3 className={"text-2xl font-medium mb-4"}>
+        <h3 className={"text-xl md:text-2xl font-medium mb-4"}>
           Keep the tokens in safe zone
         </h3>
-        <p>
+        <p className="text-sm md:text-base">
           You can store tokens inside the browser local storage or any variable
           in the client side. But it&#39;s too risky, the security level is too
           low. To keep them secure, you should always store them inside httpOnly

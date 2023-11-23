@@ -70,13 +70,13 @@ const UpdateJob = () => {
 
   return (
     <div className="bg-base-200">
-      <div className="container mx-auto">
-        <div className="text-center max-w-sm mx-auto mb-14 pt-10">
-          <h3 className="text-2xl font-medium text-zinc-600 mb-4 border-b">
+      <div className="container mx-auto px-2 lg:px-0">
+        <div className="text-center max-w-md mx-auto mb-14 pt-10">
+          <h3 className="text-3xl font-semibold text-zinc-600 mb-4 border-b">
             Update the job: <span className="font-bold">{job_title}</span>
           </h3>
         </div>
-        <form onSubmit={handleUpdate} className="space-y-10">
+        <form onSubmit={handleUpdate} className="space-y-10 text-sm md:text-base">
           {/* Row 1 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-1">
@@ -85,7 +85,7 @@ const UpdateJob = () => {
                 type="text"
                 name="title"
                 defaultValue={job_title}
-                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                className="border pl-1 md:pl-3 py-2 md:py-4 text-sm md:text-base focus:outline-none focus:shadow-md w-full"
                 required
                 id="email"
               />
@@ -93,7 +93,7 @@ const UpdateJob = () => {
             <div className="space-y-1">
               <label htmlFor="email">Job category</label>
               <select
-                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                className="border pl-1 md:pl-3 py-2 md:py-4 text-sm md:text-base focus:outline-none focus:shadow-md w-full"
                 id="email"
                 name="category"
               >
@@ -113,7 +113,7 @@ const UpdateJob = () => {
                 type="text"
                 name="salary"
                 defaultValue={salary_range}
-                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                className="border pl-1 md:pl-3 py-2 md:py-4 text-sm md:text-base focus:outline-none focus:shadow-md w-full"
                 required
                 id="salary"
               />
@@ -124,7 +124,7 @@ const UpdateJob = () => {
                 type="text"
                 name="postingDate"
                 defaultValue={new Date().toLocaleDateString()}
-                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                className="border pl-1 md:pl-3 py-2 md:py-4 text-sm md:text-base focus:outline-none focus:shadow-md w-full"
                 required
                 id="posting_date"
               />
@@ -138,7 +138,7 @@ const UpdateJob = () => {
                 type="text"
                 name="location"
                 defaultValue={location.city}
-                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                className="border pl-1 md:pl-3 py-2 md:py-4 text-sm md:text-base focus:outline-none focus:shadow-md w-full"
                 required
                 id="location"
               />
@@ -146,7 +146,7 @@ const UpdateJob = () => {
             <div className="flex flex-col">
               <label htmlFor="email">Application deadline</label>
               <DatePicker
-                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                className="border pl-1 md:pl-3 py-2 md:py-4 text-sm md:text-base focus:outline-none focus:shadow-md w-full"
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
               />
@@ -160,7 +160,7 @@ const UpdateJob = () => {
                 type="text"
                 name="conpany_logo"
                 defaultValue={company_logo}
-                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                className="border pl-1 md:pl-3 py-2 md:py-4 text-sm md:text-base focus:outline-none focus:shadow-md w-full"
                 id="company_logo"
               />
             </div>
@@ -170,7 +170,7 @@ const UpdateJob = () => {
                 type="text"
                 name="photo"
                 defaultValue={image}
-                className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+                className="border pl-1 md:pl-3 py-2 md:py-4 text-sm md:text-base focus:outline-none focus:shadow-md w-full"
                 required
                 id="photo"
               />
@@ -182,7 +182,7 @@ const UpdateJob = () => {
             <textarea
               name="description"
               defaultValue={job_description}
-              className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+              className="border pl-1 md:pl-3 py-2 md:py-4 text-sm md:text-base focus:outline-none focus:shadow-md w-full"
               id="description"
               cols="30"
               rows="5"
@@ -194,7 +194,7 @@ const UpdateJob = () => {
             <textarea
               name="responsibilities"
               defaultValue={responsibilities}
-              className="border pl-3 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
+              className="border pl-1 md:pl-3 py-2 md:py-4 text-sm md:text-base focus:outline-none focus:shadow-md w-full"
               id="responsibilities"
               cols="30"
               rows="5"
