@@ -19,7 +19,11 @@ const NodeExpress = () => {
         <h3 className={"text-xl md:text-2xl font-medium mb-4"}>Node JS</h3>
         <div className="space-y-4">
           <p className="text-sm md:text-base">
-            {/* Explain node js */}
+            Node.js is a js runtime environment that allows execute JavaScript
+            code out side web browser. It is event-driven and non-blocking, that
+            means it can handle a large number of concurrent connections
+            efficiently. Typically, it is used for creating server site
+            applications APIs.
           </p>
         </div>
       </div>

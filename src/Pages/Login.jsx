@@ -7,15 +7,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import useAuth from "../Hooks/useAuth";
 import toast from "react-hot-toast";
-import useAxios from "../Hooks/useAxios";
 
 const Login = () => {
   const [showPass, setShowPass] = useState(true);
-  const { user, login, googleLogin } = useAuth();
+  const { login, googleLogin } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
-  const axios = useAxios();
-  const loggedInUser = user?.email;
 
   // Handle Login user
   const handleLogin = (e) => {
@@ -27,13 +24,7 @@ const Login = () => {
     // Login
     login(email, password)
       .then(() => {
-        const user = { email };
-        axios.post("/jwt", user, { withCredentials: true }).then((data) => {
-          console.log(data.data.success);
-          if (data.data.success) {
-            navigate(location.state || "/");
-          }
-        });
+        navigate(location.state || "/")
         toast.success("Logged In successfully!", {
           style: {
             background: "#333",
@@ -50,13 +41,6 @@ const Login = () => {
   const handleGoogleLogin = () => {
     googleLogin()
       .then(() => {
-        const email = loggedInUser;
-        const user = { email };
-        axios.post("/jwt", user, { withCredentials: true }).then((data) => {
-          if (data.data.success) {
-            navigate(location.state || "/");
-          }
-        });
         toast.success("Logged In successfully!", {
           style: {
             background: "#333",

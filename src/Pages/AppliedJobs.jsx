@@ -30,7 +30,7 @@ const AppliedJobs = () => {
   };
 
   useEffect(() => {
-    axios.get(`/applications?email=${user?.email}`, { withCredentials: true }).then((data) => {
+    axios.get(`/applications?email=${user?.email}`).then((data) => {
       const ids = data.data.map((job) => job.jobId);
       setAppliedIds(ids);
     });
@@ -44,15 +44,26 @@ const AppliedJobs = () => {
 
   return (
     <div className="container mx-auto px-2 lg:px-0">
-      <div className="text-center max-w-xl mx-auto my-14">
-        <h3 className="text-2xl md:text-3xl font-semibold text-zinc-600 mb-4">
-          Your application history
-        </h3>
-        <p className="text-zinc-600 text-sm md:text-base">
-          Application History. Your roadmap to success. Easily track, review,
-          and manage all your job applications in one place.
-        </p>
-      </div>
+      {appliedJobs.length ? (
+        <div className="text-center max-w-xl mx-auto my-14">
+          <h3 className="text-2xl md:text-3xl font-semibold text-zinc-600 mb-4">
+            Your application history
+          </h3>
+          <p className="text-zinc-600 text-sm md:text-base">
+            Application History. Your roadmap to success. Easily track, review,
+            and manage all your job applications in one place.
+          </p>
+        </div>
+      ) : (
+        <>
+          <p className="text-xl md:text-2xl font-bold text-center mt-6">
+            You didn&#39;t applied any job yet
+          </p>
+          <figure className="flex justify-center">
+            <img src={NoDataImage} alt="No Data Found Image" />
+          </figure>
+        </>
+      )}
       <div className="flex justify-between items-center">
         <h3 className="font-bold mb-4">
           Total jobs:
@@ -88,7 +99,7 @@ const AppliedJobs = () => {
         ) : (
           <>
             <p className="text-2xl font-bold text-center">
-              You didn&#39;t applied any job yet
+              You didn&#39;t applied any job yet under this category
             </p>
             <figure className="flex justify-center">
               <img src={NoDataImage} alt="No Data Found Image" />

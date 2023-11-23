@@ -1,18 +1,26 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import useAxios from "../../Hooks/useAxios";
 
 const Profile = () => {
   const { user, logout } = useAuth();
+  const axios = useAxios();
+  const loggedUser = { email: user?.email };
+
   // Handle logout user
   const handleLogout = () => {
     logout()
-    .then(() => {
-        console.log("Logged Out");
-    })
-    .catch(err => {
+      .then(() => {
+        axios
+          .post("/logout", loggedUser)
+          .then((data) => {
+            console.log(data.data);
+          });
+      })
+      .catch((err) => {
         console.log(err.message);
-    })
-  }
+      });
+  };
   return (
     <div>
       {!user ? (
@@ -29,10 +37,7 @@ const Profile = () => {
             className="avatar btn btn-circle border-4 border-[#FF5200] hover:border-[#FF5200]"
           >
             <div className="w-10 rounded-full">
-              <img
-                alt=""
-                src={user?.photoURL}
-              />
+              <img alt="" src={user?.photoURL} />
             </div>
           </label>
           <ul
