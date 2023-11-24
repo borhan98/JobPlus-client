@@ -23,6 +23,15 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
+    if (password.length < 6) {
+      return toast.error("Password should have at least 6 character!", {
+        style: {
+          background: "#333",
+          color: "#fff",
+        },
+      });
+    }
+
     // create user
     createUser(email, password)
       .then(() => {

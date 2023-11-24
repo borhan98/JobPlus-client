@@ -21,6 +21,15 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
+    if (password.length < 6) {
+      return toast.error("Wrong username or password!", {
+        style: {
+          background: "#333",
+          color: "#fff",
+        },
+      });
+    }
+
     // Login
     login(email, password)
       .then(() => {
@@ -32,8 +41,13 @@ const Login = () => {
           },
         });
       })
-      .catch((err) => {
-        console.log(err.message);
+      .catch(() => {
+        toast.error("Wrong username or password", {
+          style: {
+            background: "#333",
+            color: "#fff",
+          },
+        });
       });
   };
 
