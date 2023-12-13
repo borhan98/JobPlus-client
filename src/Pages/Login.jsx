@@ -4,15 +4,16 @@ import { FaLock } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import useAuth from "../Hooks/useAuth";
 import toast from "react-hot-toast";
 
 const Login = () => {
   const [showPass, setShowPass] = useState(true);
-  const { login, googleLogin } = useAuth();
+  const { login, googleLogin, handleResetPass } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
+  const emailRef = useRef();
 
   // Handle Login user
   const handleLogin = (e) => {
@@ -33,7 +34,7 @@ const Login = () => {
     // Login
     login(email, password)
       .then(() => {
-        navigate(location.state || "/")
+        navigate(location.state || "/");
         toast.success("Logged In successfully!", {
           style: {
             background: "#333",
@@ -66,6 +67,27 @@ const Login = () => {
       .catch((err) => console.log(err));
   };
 
+  // Handle Forgot Password
+  const handleForgotPassword = () => {
+    const email = emailRef.current.value;
+    if (!email) {
+      return toast.error("Please enter your email!");
+    } else if (
+      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)
+    ) {
+      return toast.error("Please enter a valid email!");
+    }
+
+    // handle forgot pass
+    handleResetPass(email)
+      .then(() => {
+        toast("Please check your email");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="container mx-auto px-2 lg:px-0 flex flex-col md:flex-row items-center py-10">
       <figure className="flex-1">
@@ -80,13 +102,16 @@ const Login = () => {
         </p>
         <div className="order-1 md:order-2 mt-6 md:mt-13 lg:mt-20 mb-6">
           <h3 className="text-xl md:text-3xl font-semibold">Welcome Back!</h3>
-          <p className="text-zinc-600 text-sm md:text-base">Login to continue</p>
+          <p className="text-zinc-600 text-sm md:text-base">
+            Login to continue
+          </p>
         </div>
         <form onSubmit={handleLogin} className="order-2 md:order-3 space-y-3">
           <div className="relative">
             <input
               type="text"
               name="email"
+              ref={emailRef}
               placeholder="Enter your email"
               className="border-b border-l pl-10 py-4 rounded-md focus:outline-none focus:shadow-md w-full"
               required
@@ -112,7 +137,10 @@ const Login = () => {
             >
               {showPass ? <AiFillEye /> : <AiFillEyeInvisible />}
             </span>
-            <small className="ml-auto w-fit block mt-2 text-zinc-600 underline cursor-pointer">
+            <small
+              onClick={handleForgotPassword}
+              className="ml-auto w-fit block mt-2 text-zinc-600 underline cursor-pointer"
+            >
               Forgot password?
             </small>
           </div>
